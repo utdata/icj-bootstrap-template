@@ -28,4 +28,5 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch("docs/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('default', ['js','serve']);
+gulp.task('default', ['js','sass']);
+gulp.task('dev', ['js','serve']);
