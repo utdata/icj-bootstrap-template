@@ -1,39 +1,24 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass        = require('gulp-sass');
+const gulp = require('gulp');
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
-        .pipe(sass())
-        .pipe(gulp.dest("docs/css"))
-        .pipe(browserSync.stream());
-});
+// load gulp tasks from ./tasks
+require('gulp-load-tasks')();
 
-// Move the javascript files into our /docs/js folder
-gulp.task('js', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
-        .pipe(gulp.dest("docs/js"))
-        .pipe(browserSync.stream());
-});
+// default tasks
+gulp.task(
+  'default',
+  gulp.series(
+    'clean',
+    'styles',
+    'copy',
+    'html'
+  )
+);
 
-// Move the index.html file from src to docs
-gulp.task('html', function() {
-    return gulp.src(['src/html/*.html'])
-        .pipe(gulp.dest("docs/"))
-        .pipe(browserSync.stream());
-})
+gulp.task(
+  'dev',
+  gulp.series('default', 'serve')
+);
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
-
-    browserSync.init({
-        server: "./docs"  
-    });
-
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
-    gulp.watch("src/html/*.html", ['html']);
-});
-
-gulp.task('default', ['js','sass', 'html']);
-gulp.task('dev', ['js','html','serve']);
+gulp.task(
+  'clear'
+);
