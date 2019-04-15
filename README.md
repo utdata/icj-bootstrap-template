@@ -21,8 +21,6 @@ This template goes along with the [Bootstrap lessons](https://github.com/utdata/
 - Run `$ gulp dev` to compile all the code and start a server.
 - If you just want to compile code without running a server, run `gulp` by itself.
 
---------
+## Edit in the src folder
 
-## Development notes
-
-The current bootstrap class assignment doesn't require images or local javascript files beyond bootstrap and this project rig does not account for them. Development would be necessary to do so, which could be done based on the static-app rig.
+All edits to HTML, SCSS or images should be done in the `src` folder. DO NOT edit files in the `docs` folder, or you will lose the changes when gulp tasks run.

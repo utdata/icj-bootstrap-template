@@ -10,7 +10,8 @@ gulp.task(
     'clean',
     'styles',
     'copy',
-    'html'
+    'html',
+    'images'
   )
 );
 
