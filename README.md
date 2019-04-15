@@ -20,3 +20,9 @@ This template goes along with the [Bootstrap lessons](https://github.com/utdata/
 
 - Run `$ gulp dev` to compile all the code and start a server.
 - If you just want to compile code without running a server, run `gulp` by itself.
+
+--------
+
+## Development notes
+
+The current bootstrap class assignment doesn't require images or local javascript files beyond bootstrap and this project rig does not account for them. Development would be necessary to do so, which could be done based on the static-app rig.
