@@ -22,7 +22,7 @@ module.exports = () => {
   ];
 
   var plugins = [
-  cssnano()
+    cssnano()
   ];
 
   return gulp.src([
