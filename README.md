@@ -2,6 +2,8 @@
 
 This template goes along with the [Bootstrap lessons](https://github.com/utdata/icj-class#bootstrap) for Intro to Coding for Journalists.
 
+It uses Bootstrap 5 and a Gulp setup to support a development environment with Sass and image management.
+
 ## How to set up your project
 
 - Create a new folder in your `icj/` folder called `yourname-bootstrap`.
