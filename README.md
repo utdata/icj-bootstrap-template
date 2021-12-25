@@ -16,7 +16,7 @@ It uses Bootstrap 5 and a Gulp setup to support a development environment with S
 - Run `$ git commit -m "first commit"` to commit the files.
 - Go to Github and create a repository of the same name.
 - Use the `git add` command provided there to sync the repos.
-- Run `$ git push origin master` to push the code to Github.
+- Run `$ git push origin main` to push the code to Github.
 
 ## How to run the project
 
