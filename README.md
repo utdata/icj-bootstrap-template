@@ -26,3 +26,10 @@ It uses Bootstrap 5 and a Gulp setup to support a development environment with S
 ## Edit in the src folder
 
 All edits to HTML, SCSS or images should be done in the `src` folder. DO NOT edit files in the `docs` folder, or you will lose the changes when gulp tasks run.
+
+---
+
+```txt
+,
+    "nav": "^0.0.2"
+```

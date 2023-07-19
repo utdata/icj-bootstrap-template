@@ -1,25 +1,28 @@
-const gulp = require('gulp');
+import clean from './tasks/clean.js';
+import clear from './tasks/clear.js';
+import copy from './tasks/copy.js';
+import gulp from 'gulp';
+import html from './tasks/html.js';
+import images from './tasks/images.js';
+import serve from './tasks/serve.js';
+import styles from './tasks/styles.js';
 
-// load gulp tasks from ./tasks
-require('gulp-load-tasks')();
+
 
 // default tasks
 gulp.task(
   'default',
   gulp.series(
-    'clean',
-    'styles',
-    'copy',
-    'html',
-    'images'
+    clean,
+    styles,
+    copy,
+    gulp.parallel(images),
+    html
   )
 );
 
-gulp.task(
-  'dev',
-  gulp.series('default', 'serve')
-);
+// run default tasks and then serve locally
+gulp.task('dev', gulp.series('default', serve));
 
-gulp.task(
-  'clear'
-);
+// Allow them to be called individually
+gulp.task(clear);

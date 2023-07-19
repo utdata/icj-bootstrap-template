@@ -1,6 +1,11 @@
-const del = require('del');
+import { deleteSync } from 'del';
+import gulp from 'gulp';
 
-module.exports = (resolve, reject) => {
-    del(['docs/*'], {dot: true});
-    resolve();
-};
+function clean(resolve) {
+  deleteSync(['docs/*']);
+  resolve();
+}
+
+gulp.task('clean', clean);
+
+export default clean;

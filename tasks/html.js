@@ -1,6 +1,11 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
 
-module.exports = () => {
-  return gulp.src(['src/html/*.html'])
-      .pipe(gulp.dest("./docs"));
-};
+function html() {
+  return gulp
+    .src(['src/html/*.html'])
+    .pipe(gulp.dest('./docs'));
+}
+
+gulp.task('html', html);
+
+export default html;

@@ -1,9 +1,15 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
 
-module.exports = () => {
-  return gulp.src([
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.js.map'
-  ])
-    .pipe(gulp.dest('./docs/js'))
-};
+function copy() {
+  return gulp
+    .src([
+      // 'node_modules/jquery/dist/jquery.js',
+      'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+    ])
+    .pipe(gulp.dest('./docs/js'));
+}
+
+gulp.task('copy', copy);
+
+export default copy;
