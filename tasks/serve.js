@@ -14,7 +14,7 @@ function serve() {
     server: 'docs',
     port: 3000
   }),
-  gulp.watch(['src/html/**/*.html'], gulp.series('html', browserSyncReload));
+  gulp.watch(['src/**/*.html'], gulp.series('html', browserSyncReload));
   gulp.watch(
     ['node_modules/bootstrap/scss/bootstrap.scss','src/scss/**/*.*css'],
     gulp.series('styles', browserSyncReload)

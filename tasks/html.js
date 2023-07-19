@@ -2,7 +2,7 @@ import gulp from 'gulp';
 
 function html() {
   return gulp
-    .src(['src/html/*.html'])
+    .src(['src/*.html'])
     .pipe(gulp.dest('./docs'));
 }
 
