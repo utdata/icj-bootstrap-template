@@ -1,6 +1,6 @@
 # ICJ Bootstrap Template
 
-This template goes along with the [Bootstrap lessons](https://github.com/utdata/icj-class#bootstrap) for Intro to Coding for Journalists.
+This template goes along with the [Bootstrap lessons](https://utdata.github.io/icj-class/bs-00-intro.html) for Intro to Coding for Journalists.
 
 It uses Bootstrap 5 and a Gulp setup to support a development environment with Sass and image management.
 
@@ -26,3 +26,10 @@ It uses Bootstrap 5 and a Gulp setup to support a development environment with S
 ## Edit in the src folder
 
 All edits to HTML, SCSS or images should be done in the `src` folder. DO NOT edit files in the `docs` folder, or you will lose the changes when gulp tasks run.
+
+---
+
+```txt
+,
+    "nav": "^0.0.2"
+```

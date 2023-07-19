@@ -1,21 +1,30 @@
-const gulp = require('gulp');
-const cache = require('gulp-cache');
-const imagemin = require('gulp-imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg'); 
-const imageminPngquant = require('imagemin-pngquant');
+import cache from 'gulp-cache';
+import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminPngquant from 'imagemin-pngquant';
 
-module.exports = () => {
-  return gulp.src('./src/img/**/*')
-    .pipe(cache(imagemin([
-      // lossy jpg compression
-      imageminMozjpeg({
-        quality: 50
-      }),
-      // png compression
-      imageminPngquant({
-        speed: 1,
-        quality: 98 //lossy settings
-      })
-  ])))
-    .pipe(gulp.dest('./docs/img'))
-};
+function images() {
+  return gulp
+    .src('./src/img/**/*')
+    .pipe(
+      cache(
+        imagemin([
+          // lossy jpg compression
+          imageminMozjpeg({
+            quality: 50
+          }),
+          // png compression
+          imageminPngquant({
+            speed: 1,
+            quality: 98 // lossy settings
+          })
+        ])
+      )
+    )
+    .pipe(gulp.dest('./docs/img'));
+}
+
+gulp.task('images', images);
+
+export default images;
