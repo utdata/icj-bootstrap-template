@@ -19,6 +19,7 @@ function serve() {
     ['node_modules/bootstrap/scss/bootstrap.scss','src/scss/**/*.*css'],
     gulp.series('styles', browserSyncReload)
     );
+    gulp.watch(['src/img/**/*'], gulp.series('images', browserSyncReload));
 }
 
 gulp.task('serve', serve);
